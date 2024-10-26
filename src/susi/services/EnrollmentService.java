@@ -40,6 +40,16 @@ public class EnrollmentService {
         enrollmentRepository.save(enrollmentToSave);
     }
 
+    public void expelStudent(String studentId, String courseId) {
+        validateStudentExists(studentId);
+        validateCourseExists(courseId);
+
+        Enrollment enrollment = enrollmentRepository.find(studentId, courseId);
+
+        Enrollment enrollmentToSave = enrollment.withIsExpelled(true);
+        enrollmentRepository.save(enrollmentToSave);
+    }
+
     private void validateCourseExists(String courseId) {
         boolean courseExists = courseService.findCourseById(courseId) != null;
 
