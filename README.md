@@ -58,6 +58,8 @@ This is a common design decision in software development, and there are pros and
 I personally endorse the second one, because your future task at work is more likely to be "Add X to Courses" or "Add the ability for Teachers to do Y". This way you can easily find all related classes in one place - the `courses` or `teachers` packages.  
 Nevertheless - we voted during the lecture, and decided to use the 1st approach for our *top-level* package splitting technique.  
 
+In the end, we used the second approach for the subpackages in the `repository` package, because there were a lot of classes there.
+
 ### Discussion 2 (data-layer and service-layer coupling)
 When creating a `Course` in the `CourseService`, we needed to validate, that the `teacherId` is valid.  
 The two suggestions were to do it via the `TeacherService` or `TeacherRepository`.  
