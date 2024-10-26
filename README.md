@@ -2,7 +2,7 @@
 
 ## Models
 We started by implementing the models - `Student`, `Teacher`, `Course`.  
-Because the relationship between `Student` and `Course` is many-to-many, we created an additional model called `Enrollment` to represent this relationship.  
+Because the relationship between `Student` and `Course` is many-to-many, we created an additional model called `Enrollment` to represent it.  
 We used Java 17 records, because they are a quick and simple way to create data objects.  
 
 ## Teacher
@@ -59,7 +59,7 @@ I personally endorse the second one, because your future task at work is more li
 Nevertheless - we voted during the lecture, and decided to use the 1st approach for our *top-level* package splitting technique.  
 
 ### Discussion 2 (data-layer and service-layer coupling)
-When creating a `Course`, we needed to validate, that the `teacherId` is valid.  
+When creating a `Course` in the `CourseService`, we needed to validate, that the `teacherId` is valid.  
 The two suggestions were to do it via the `TeacherService` or `TeacherRepository`.  
 
 The correct answer is to do it in the `TeacherService`, because the service is responsible for the business logic, while the repository is responsible for data access.  

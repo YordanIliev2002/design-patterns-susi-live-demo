@@ -13,7 +13,7 @@ public class CourseService {
     }
 
     public void addCourse(Course course) {
-        if (teacherService.findTeacherById(course.leadingTeacherId()) != null) {
+        if (teacherService.findTeacherById(course.leadingTeacherId()) == null) {
             throw new IllegalArgumentException("Teacher not found");
         }
         courseRepository.save(course);
