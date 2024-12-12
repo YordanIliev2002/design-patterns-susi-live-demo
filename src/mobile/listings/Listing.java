@@ -36,26 +36,4 @@ public class Listing {
     public void setCar(Car car) {
         this.car = car;
     }
-
-    public ListingSnapshot createSnapshot() {
-        return new ListingSnapshot(title, price, car);
-    }
-
-    public void restore(ListingSnapshot snapshot) {
-        title = snapshot.title;
-        price = snapshot.price;
-        car = snapshot.car;
-    }
-
-    public static class ListingSnapshot {
-        private final String title;
-        private final int price;
-        private final Car car;
-
-        private ListingSnapshot(String title, int price, Car car) {
-            this.title = title;
-            this.price = price;
-            this.car = car;
-        }
-    }
 }
