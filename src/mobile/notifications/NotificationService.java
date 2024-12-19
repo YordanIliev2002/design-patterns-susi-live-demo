@@ -23,9 +23,9 @@ public class NotificationService {
                 }
             }
             if (shouldNotify) {
-                String message = listing.getCar().brand() + " "
-                    + listing.getCar().model() +
-                    " for " + listing.getPrice();
+                String message = listing.car().brand() + " "
+                    + listing.car().model() +
+                    " for " + listing.price();
                 notificationRule.channel().notify(
                     "New car found for you!",
                     message
